@@ -1,0 +1,29 @@
+V1
+    Pyinstaller => certains boutons n'apparaissent pas avec qt_material
+
+V2
+    Recherche d'un ticket
+        search_widget
+        par ID
+        par ticket GLPI
+        par nom et/ou description
+    Possibilité de zoomer sur la grille (https://stackoverflow.com/questions/26885091/scale-a-qtablewidget)
+    Lien avec GLPI => créer des projets
+    Tasser les tickets vers le haut (attention à ne pas bouger le plus en haut des tickets)
+    Sélectionner plusieurs tickets (CTRL / SELECT)
+    Ticket récurrent
+    Déplacer le ticket à une date dans le ratelier (click droit)
+        ticket_mover_widget
+    
+V3
+    Analyse : point fixe puis nombre de jour "fait" par nombre de jours réels
+    Gérer le cas de site et système avec plusieurs choix
+    Alerte pour date de fin après deadline
+    Gérer les "contacts" -> séparer ticket GLPI et adresse mail
+    Bouton pour aller à aujourd'hui
+    Alerte sur les projets sans charge
+    Analyse : charge totale par user en jours (enregistrer la date finale de la somme de tous les projets)
+        MAJ à chaque ouverture ou à chaque création de projets ?
+        dans tous les cas, probablement besoin de juste une info en fin de journée (à la fermeture au final ?)
+    Menu pour gérer les employés (création / modification)
+    Menu pour gérer les paramètres (création / modification)

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="MyMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>682</width>
+    <height>578</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Planning</string>
+  </property>
+  <property name="ShortCut" stdset="0">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>682</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuExcel">
+    <property name="title">
+     <string>Excel</string>
+    </property>
+    <addaction name="action_open_importer"/>
+    <addaction name="action_open_exporter"/>
+   </widget>
+   <addaction name="menuExcel"/>
+  </widget>
+  <widget class="QStatusBar" name="status_bar"/>
+  <action name="action_save_view">
+   <property name="text">
+    <string>Sauver la vue</string>
+   </property>
+  </action>
+  <action name="action_open_cut">
+   <property name="text">
+    <string>Open video cut</string>
+   </property>
+  </action>
+  <action name="action_open_extraits">
+   <property name="text">
+    <string>Ouvrir extraits</string>
+   </property>
+  </action>
+  <action name="action_small_cells">
+   <property name="text">
+    <string>Petites cellules</string>
+   </property>
+  </action>
+  <action name="action_medium_cells">
+   <property name="text">
+    <string>Moyennes cellules</string>
+   </property>
+  </action>
+  <action name="action_big_cells">
+   <property name="text">
+    <string>Grandes cellules</string>
+   </property>
+  </action>
+  <action name="action_create_thumbnails">
+   <property name="text">
+    <string>Créer tous les thumbnails</string>
+   </property>
+  </action>
+  <action name="action_add_new_videos">
+   <property name="text">
+    <string>Ajouter nouvelles videos</string>
+   </property>
+  </action>
+  <action name="action_open_importer">
+   <property name="text">
+    <string>Importer un fichier de taches</string>
+   </property>
+  </action>
+  <action name="action_open_exporter">
+   <property name="text">
+    <string>Exporter un fichier de taches</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyMainWindow</class>
+   <extends>QMainWindow</extends>
+   <header>main_window.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

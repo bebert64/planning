@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PlanningGrid</class>
+ <widget class="PlanningGrid" name="PlanningGrid">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="dragEnabled">
+   <bool>true</bool>
+  </property>
+  <property name="dragDropMode">
+   <enum>QAbstractItemView::DragDrop</enum>
+  </property>
+  <property name="rowCount">
+   <number>1</number>
+  </property>
+  <property name="columnCount">
+   <number>1</number>
+  </property>
+  <row/>
+  <column/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PlanningGrid</class>
+   <extends>QTableWidget</extends>
+   <header>planning_grid.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
