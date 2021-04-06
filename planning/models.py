@@ -280,6 +280,14 @@ class ProjectModel(PlanningBaseModel):
         return math.ceil(self.charge / self.owner.free_time_percentage * 100)
 
     def get_tickets_duration(self) -> Day:
+        """
+        The sum of the duration for all tickets linked to the project.
+
+        Is used to calculate the "remaining" duration, which will be the one used for
+        the ticket with duration 0 (there should always be 1 ticket maximum with
+        duration 0 for a project).
+
+        """
         tickets = (
             TicketModel.select().join(ProjectModel).where(ProjectModel.id == self.id)
         )
@@ -402,6 +410,7 @@ class TicketModel(PlanningBaseModel):
         return title
 
     def needs_being_erased(self) -> bool:
+        """Whether or not the ticket needs to be erased."""
         project_model = self.project_or_none()
         return False if project_model is None else not project_model.status.is_drawn
 

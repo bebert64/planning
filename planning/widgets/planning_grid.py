@@ -123,6 +123,16 @@ class PlanningGrid(  # pylint: disable=too-many-ancestors
         Ticket.draw_all_tickets(self)
 
     def refresh_grid(self, tickets: Optional[List[TicketModel]] = None) -> None:
+        """
+        Refreshes tickets on the grid.
+
+        Parameters
+        ----------
+        tickets
+            A list of tickets to refresh. Default is None, in which case all tickets
+            on the grid will be refreshed.
+
+        """
         if tickets is None:
             tickets = TicketModel.select()
         total = len(tickets)

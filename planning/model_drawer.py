@@ -230,7 +230,6 @@ class Ticket:
         """The number of cells needed to draw the ticket."""
         return self.ticket_model.length
 
-    # TODO : update the model in a clean way...
     def refresh(self) -> None:
         """
         Erases or redraw the ticket.
@@ -267,6 +266,7 @@ class Ticket:
             project.refresh()
 
     def project_or_none(self) -> Optional[Project]:
+        """The Project linked to the Ticket if existing, or None."""
         project_model = self.ticket_model.project_or_none()
         if project_model is not None:
             project: Optional[Project] = Project(project_model, self.planning_grid)
