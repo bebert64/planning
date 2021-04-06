@@ -401,7 +401,7 @@ class TicketModel(PlanningBaseModel):
             title = "N/A"
         return title
 
-    def needs_being_erased(self):
+    def needs_being_erased(self) -> bool:
         project_model = self.project_or_none()
         return False if project_model is None else not project_model.status.is_drawn
 

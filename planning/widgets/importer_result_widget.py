@@ -8,7 +8,7 @@ Defines :
 
 from __future__ import annotations
 
-from typing import Union, Type, List
+from typing import Union, Type, List, Optional
 
 from PySide6 import QtWidgets
 from utils.my_custom_widget import MyCustomWidget
@@ -32,7 +32,7 @@ class ImporterResultWidget(QtWidgets.QWidget, MyCustomWidget):
 
     """
 
-    def __init__(self, parent=None) -> None:
+    def __init__(self, parent: Optional[QtWidgets.QWidget] = None) -> None:
         super().__init__(parent)
         self.importer: importer.Importer
         self.projects_updated: List[ProjectModel] = []
@@ -59,45 +59,45 @@ class ImporterResultWidget(QtWidgets.QWidget, MyCustomWidget):
         importer_result_widget._connect_actions()
         return importer_result_widget
 
-    def _connect_actions(self):
+    def _connect_actions(self) -> None:
         self.cancel_button.clicked.connect(self.close)
         self.ok_button.clicked.connect(self._handle_ok)
 
-    def _handle_ok(self):
+    def _handle_ok(self) -> None:
         self._accept_modif_auto()
         self._accept_modif_validate()
         self._create_new_projects()
         self._refresh_planning_grid()
         self.close()
 
-    def _accept_modif_auto(self):
+    def _accept_modif_auto(self) -> None:
         for widget in self.modif_auto_group_box.children():
             if isinstance(widget, QtWidgets.QLabel):
                 project_modification = widget.my_object
                 self.projects_updated.append(project_modification.project.id)
                 project_modification.accept()
 
-    def _accept_modif_validate(self):
+    def _accept_modif_validate(self) -> None:
         for widget in self.modif_validate_group_box.children():
             if isinstance(widget, QtWidgets.QCheckBox) and widget.isChecked():
                 project_modification = widget.my_object
                 self.projects_updated.append(project_modification.project.id)
                 project_modification.accept()
 
-    def _create_new_projects(self):
+    def _create_new_projects(self) -> None:
         for widget in self.projects_new_group_box.children():
             if isinstance(widget, QtWidgets.QLabel):
                 project_model = widget.my_object
                 self.projects_updated.append(project_model.id)
                 project_model.save(force_insert=True)
 
-    def _refresh_planning_grid(self):
+    def _refresh_planning_grid(self) -> None:
         my_main_window = self.importer.my_main_window
         planning_grid = my_main_window.centralWidget()
         tickets = (
             TicketModel.select()
             .join(ProjectModel)
-            .where(ProjectModel.id << self.projects_updated)
+            .where(ProjectModel.id << self.projects_updated)  #type: ignore
         )
         planning_grid.refresh_grid(tickets)
 

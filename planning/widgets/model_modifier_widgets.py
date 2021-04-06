@@ -99,7 +99,7 @@ class ProjectModifierWidget(QtWidgets.QWidget, MyCustomWidget, ModelModifierWidg
         "origin": ("origin_line_edit", "setText", "text"),
     }
 
-    def __init__(self, parent=None) -> None:
+    def __init__(self, parent: Optional[QtWidgets.QWidget] = None) -> None:
         super().__init__(parent)
         self.planning_grid: planning_grid.PlanningGrid
         self.ticket_clicked: TicketModel
@@ -389,7 +389,7 @@ class TicketInfoWidget(QtWidgets.QWidget, MyCustomWidget, ModelModifierWidget):
         return self._model
 
     @ticket_model.setter
-    def ticket_model(self, ticket_model) -> None:
+    def ticket_model(self, ticket_model: TicketModel) -> None:
         self._model = ticket_model
 
     def init_values(self) -> None:
@@ -438,7 +438,7 @@ class TicketModifierWidget(QtWidgets.QWidget, MyCustomWidget):
 
     """
 
-    def __init__(self, parent=None) -> None:
+    def __init__(self, parent: Optional[QtWidgets.QWidget] = None) -> None:
         super().__init__(parent)
         self._planning_grid: planning_grid.PlanningGrid
         self._ticket_model: TicketModel

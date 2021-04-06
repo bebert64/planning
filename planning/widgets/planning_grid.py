@@ -122,7 +122,7 @@ class PlanningGrid(  # pylint: disable=too-many-ancestors
         self.setStyleSheet("QTableView::item {padding: 0px ; }")
         Ticket.draw_all_tickets(self)
 
-    def refresh_grid(self, tickets: Optional[List[TicketModel]] = None):
+    def refresh_grid(self, tickets: Optional[List[TicketModel]] = None) -> None:
         if tickets is None:
             tickets = TicketModel.select()
         total = len(tickets)
@@ -240,7 +240,7 @@ class GridInitializer:
         self._horizontal_headers: Headers = []
         self._first_day: date
 
-    def initialize_grid(self):
+    def initialize_grid(self) -> None:
         """Draws all columns and rows, and updates the cells' coordinates."""
         self._create_all_columns()
         self._compute_first_day()
@@ -258,18 +258,18 @@ class GridInitializer:
         header_view = grid.horizontalHeader()
         header_view.setStyleSheet("QHeaderView::section { color: white }")
 
-    def _create_member_columns(self, member):
+    def _create_member_columns(self, member: Member) -> None:
         self._create_column(member.name, config["column_width"])
         self._create_column(config["column_backlog_name"], config["column_width"])
         self._create_column("", config["column_empty_width"])
 
-    def _create_column(self, title: str, width: Pixel):
+    def _create_column(self, title: str, width: Pixel) -> None:
         grid = self._planning_grid
         grid.insertColumn(grid.columnCount())
         self._horizontal_headers.append(title)
         grid.setColumnWidth(grid.columnCount() - 1, width)
 
-    def _compute_first_day(self):
+    def _compute_first_day(self) -> None:
         empty_rows_quantity = CellModel.select().order_by(CellModel.row).get().row
         date_first_row_old = FirstRow.get().date
         date_first_cell_old = add_workdays(date_first_row_old, empty_rows_quantity)
