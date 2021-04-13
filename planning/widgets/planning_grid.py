@@ -58,7 +58,7 @@ class PlanningGrid(  # pylint: disable=too-many-ancestors
 
     """
 
-    def __init__(self, parent: QtWidgets.QWidget = None) -> None:
+    def __init__(self, parent: Optional[QtWidgets.QWidget] = None) -> None:
         super().__init__(parent)
         self.days_displayed: List[date] = []
 
@@ -328,7 +328,9 @@ class GridInitializer:
     @staticmethod
     def _get_cells_ordered(delta: Day) -> Iterable[CellModel]:
         if delta > 0:
-            cells_ordered = CellModel.select().order_by(CellModel.row)
+            cells_ordered: Iterable[CellModel] = CellModel.select().order_by(
+                CellModel.row
+            )
         elif delta < 0:
             cells_ordered = CellModel.select().order_by(
                 CellModel.row.desc()  # type: ignore

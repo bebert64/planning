@@ -13,7 +13,6 @@ Defines :
 
 from __future__ import annotations
 
-import datetime
 from typing import Dict, Tuple, Optional, List
 
 from PySide6 import QtWidgets
@@ -233,10 +232,8 @@ class ProjectModifierWidget(QtWidgets.QWidget, MyCustomWidget, ModelModifierWidg
         deadline = self.project_model.deadline
         if deadline is None:
             deadline_str = ""
-        elif isinstance(deadline, datetime.date):
-            deadline_str = date_to_string(deadline)
         else:
-            deadline_str = deadline
+            deadline_str = date_to_string(deadline)
         self.deadline_line_edit.setText(deadline_str)
 
     def _add_ticket_modifier_widgets(self) -> None:

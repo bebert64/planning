@@ -110,7 +110,7 @@ class Member(PlanningBaseModel):
 
     def _get_last_project_key(self) -> str:
         try:
-            last_key = (
+            last_key: str = (
                 ProjectModel.select()
                 .where(ProjectModel.id.startswith(self.initials))
                 .order_by(ProjectModel.id.desc())  # type: ignore
@@ -375,7 +375,7 @@ class TicketModel(PlanningBaseModel):
     def first_cell_or_none(self) -> Optional[CellModel]:
         """The cell with the lowest row number on the ticket."""
         try:
-            first_cell = (
+            first_cell: Optional[CellModel] = (
                 CellModel.select()
                 .where(CellModel.ticket == self.id)
                 .order_by(CellModel.row)
@@ -389,7 +389,7 @@ class TicketModel(PlanningBaseModel):
     def last_cell_or_none(self) -> Optional[CellModel]:
         """The cell with the highest row number on the ticket."""
         try:
-            last_cell = (
+            last_cell: Optional[CellModel] = (
                 CellModel.select()
                 .where(CellModel.ticket == self.id)
                 .order_by(CellModel.row.desc())  # type: ignore

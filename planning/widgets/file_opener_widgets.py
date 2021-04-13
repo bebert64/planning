@@ -56,7 +56,7 @@ class FileOpenerWidget(QtWidgets.QWidget, MyCustomWidget):
 
     def _get_member(self) -> Member:
         member_name = self.members_combo_box.currentText()
-        member = Member.get(name=member_name)
+        member: Member = Member.get(name=member_name)
         return member
 
     def _handle_ok(self) -> None:
