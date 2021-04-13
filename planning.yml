@@ -11,7 +11,6 @@ dependencies:
   - pip
   - pyinstaller
   - pylint
-  - sphinx
   - toml
   - xlsxwriter
   - pip:
@@ -19,5 +18,5 @@ dependencies:
     - qt-material
     - sphinx-autodoc-typehints
     - sphinx_rtd_theme
-    - -e C:\\Users\\CassanR\\Perso\\Code\\Python\\utils
-prefix: C:\Users\CassanR\.conda\envs\planning_test
+    - -e C:\\Users\\Mago\\Desktop\\Romain\\utils
+    - -e C:\\Users\\Mago\\Desktop\\Romain\\sphinx
