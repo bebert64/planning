@@ -58,7 +58,7 @@ class PlanningGrid(  # pylint: disable=too-many-ancestors
 
     """
 
-    def __init__(self, parent: Optional[QtWidgets.QWidget] = None) -> None:
+    def __init__(self, parent: Optional[QtWidgets.QWidget] = None):
         super().__init__(parent)
         self.days_displayed: List[date] = []
 
@@ -244,7 +244,7 @@ class GridInitializer:
 
     """
 
-    def __init__(self, planning_grid: PlanningGrid) -> None:
+    def __init__(self, planning_grid: PlanningGrid):
         self._planning_grid: PlanningGrid = planning_grid
         self._days_displayed: List[date] = []
         self._horizontal_headers: Headers = []

@@ -32,7 +32,7 @@ class ImporterResultWidget(QtWidgets.QWidget, MyCustomWidget):
 
     """
 
-    def __init__(self, parent: Optional[QtWidgets.QWidget] = None) -> None:
+    def __init__(self, parent: Optional[QtWidgets.QWidget] = None):
         super().__init__(parent)
         self.importer: importer.Importer
         self.projects_updated: List[ProjectModel] = []

@@ -43,7 +43,7 @@ class ModelModifierWidget:
 
     field_setter_getter: Dict[str, Tuple[str, str, str]] = {}
 
-    def __init__(self) -> None:
+    def __init__(self):
         super().__init__()
         self._model: ProjectModel
 
@@ -98,7 +98,7 @@ class ProjectModifierWidget(QtWidgets.QWidget, MyCustomWidget, ModelModifierWidg
         "origin": ("origin_line_edit", "setText", "text"),
     }
 
-    def __init__(self, parent: Optional[QtWidgets.QWidget] = None) -> None:
+    def __init__(self, parent: Optional[QtWidgets.QWidget] = None):
         super().__init__(parent)
         self.planning_grid: planning_grid.PlanningGrid
         self.ticket_clicked: TicketModel
@@ -435,7 +435,7 @@ class TicketModifierWidget(QtWidgets.QWidget, MyCustomWidget):
 
     """
 
-    def __init__(self, parent: Optional[QtWidgets.QWidget] = None) -> None:
+    def __init__(self, parent: Optional[QtWidgets.QWidget] = None):
         super().__init__(parent)
         self._planning_grid: planning_grid.PlanningGrid
         self._ticket_model: TicketModel

@@ -75,7 +75,7 @@ class ImporterOpenerWidget(FileOpenerWidget):
 
     """
 
-    def __init__(self, parent: Optional[QtWidgets.QWidget] = None) -> None:
+    def __init__(self, parent: Optional[QtWidgets.QWidget] = None):
         super().__init__(parent)
         self._my_main_window: my_main_window.MyMainWindow
 

@@ -148,7 +148,7 @@ class Cell:
 
     def __init__(
         self, model: CellModel, my_planning_grid: planning_grid.PlanningGrid
-    ) -> None:
+    ):
         self._model: CellModel = model
         self._planning_grid: planning_grid.PlanningGrid = my_planning_grid
         self._item: QtWidgets.QTableWidgetItem = QtWidgets.QTableWidgetItem()
@@ -406,7 +406,7 @@ class TicketMover:
 
     """
 
-    def __init__(self, ticket: Ticket) -> None:
+    def __init__(self, ticket: Ticket):
         self.ticket: Ticket = ticket
         self._rows_taken: Dict[Row, CellModel] = {}
         self._rows_fixed: List[Row] = []

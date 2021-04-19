@@ -67,7 +67,7 @@ class Importer(ExcelInterface):
 
     def __init__(
         self, member: Member, my_main_window: main_window.MyMainWindow
-    ) -> None:
+    ):
         super().__init__(member)
         self.my_main_window: main_window.MyMainWindow = my_main_window
         self._excel_file_path: Path = config[
@@ -173,7 +173,7 @@ class ProjectModification:
 
     """
 
-    def __init__(self, project: ProjectModel, field: str, value_new: Any) -> None:
+    def __init__(self, project: ProjectModel, field: str, value_new: Any):
         self.project: ProjectModel = project
         self.field: str = field
         self.value_new: Any = value_new
@@ -214,7 +214,7 @@ class Exporter(ExcelInterface):
 
     """
 
-    def __init__(self, member: Member) -> None:
+    def __init__(self, member: Member):
         super().__init__(member)
         self._excel_file_path: Path = config[
             "excel_folder_path"
