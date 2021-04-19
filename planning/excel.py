@@ -30,9 +30,17 @@ from planning.widgets.importer_result_widget import ImporterResultWidget
 
 class ExcelInterface:
 
-    """Base class for the Importer and the Exporter."""
+    """
+    Base class for the Importer and the Exporter.
 
-    def __init__(self, member: Member) -> None:
+    Parameters
+    ----------
+    member
+        The member of the team's whose projects we need to import.
+
+    """
+
+    def __init__(self, member: Member):
         self.member: Member = member
 
     @property
@@ -51,6 +59,9 @@ class Importer(ExcelInterface):
     ----------
     member
         The member of the team's whose projects we need to import.
+    my_main_window
+        The MyMainWindow object onto which the tickets associated with the new projects
+        will be drawn.
 
     """
 
