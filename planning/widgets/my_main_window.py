@@ -10,7 +10,7 @@ from __future__ import annotations
 
 from PySide6 import QtWidgets
 from qt_material import QtStyleTools
-from utils.my_custom_widget import MyCustomWidget
+from utils_by_db.my_custom_widget import MyCustomWidget
 
 from planning.widgets.file_opener_widgets import ImporterOpenerWidget, ExporterWidget
 from planning.widgets.planning_grid import PlanningGrid

@@ -16,7 +16,7 @@ from __future__ import annotations
 from typing import Dict, Tuple, Optional, List
 
 from PySide6 import QtWidgets
-from utils.my_custom_widget import MyCustomWidget
+from utils_by_db.my_custom_widget import MyCustomWidget
 
 import planning.widgets.planning_grid as planning_grid
 from planning.model_drawer import Ticket

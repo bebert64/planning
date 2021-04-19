@@ -6,8 +6,8 @@ Defines :
 
 """
 
-from utils.config import Config
-from utils.functions import get_data_folder
+from utils_by_db.config import Config
+from utils_by_db.functions import get_data_folder
 
 
 _ini_file = get_data_folder() / "config_planning.ini"

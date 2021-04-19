@@ -37,8 +37,8 @@ from peewee import (
     DateField,
     DoesNotExist,
 )
-from utils.config_database import ConfigDatabase
-from utils.my_types import Row, Column
+from utils_by_db.config_database import ConfigDatabase
+from utils_by_db.my_types import Row, Column
 
 from planning.config_planning.config_planning import config
 from planning.my_types import Day

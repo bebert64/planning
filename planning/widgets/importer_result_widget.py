@@ -11,7 +11,7 @@ from __future__ import annotations
 from typing import Union, Type, List, Optional
 
 from PySide6 import QtWidgets
-from utils.my_custom_widget import MyCustomWidget
+from utils_by_db.my_custom_widget import MyCustomWidget
 
 import planning.excel as importer
 from planning.models import ProjectModel, TicketModel

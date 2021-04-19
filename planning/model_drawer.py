@@ -19,7 +19,7 @@ from typing import Optional, Dict, List, Tuple, Set
 
 import peewee
 from PySide6 import QtWidgets, QtGui, QtCore
-from utils.functions import max_with_none, min_with_none
+from utils_by_db.functions import max_with_none, min_with_none
 
 from planning.config_planning.config_planning import config
 from planning.models import ProjectModel, TicketModel, CellModel

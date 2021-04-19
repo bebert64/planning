@@ -13,8 +13,8 @@ from datetime import timedelta, date
 from typing import List, Optional, Iterable
 
 from PySide6 import QtWidgets, QtGui, QtCore
-from utils.my_custom_widget import MyCustomWidget
-from utils.my_types import Pixel, Headers
+from utils_by_db.my_custom_widget import MyCustomWidget
+from utils_by_db.my_types import Pixel, Headers
 
 from planning.config_planning.config_planning import config
 from planning.model_drawer import Ticket
