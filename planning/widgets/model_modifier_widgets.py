@@ -33,8 +33,8 @@ class ModelModifierWidget:
 
     This is a base class, meant to be subclassed and cannot be used by itself.
 
-    Class Attribute
-    ---------------
+    Class Attributes
+    ----------------
     field_setter_getter
         A dictionary linking a TicketModel attribute to a tuple with the widget that
         will display this information, and its setter and getter methods.
